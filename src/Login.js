@@ -37,73 +37,85 @@ const Login = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="card shadow-lg">
-            <div className="card-header bg-primary text-white text-center">
-              <h3>Login</h3>
-            </div>
-            <div className="card-body">
-              <form onSubmit={handleSubmit}>
-                {/* Email Input */}
-                <div className="form-group mb-3">
-                  <label htmlFor="email">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="form-control"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
+    <>
+      {/* Navbar */}
+      <nav className="navbar navbar-light bg-light">
+        <div className="container">
+          <Link to="/" className="navbar-brand">
+            <strong>DeluluCR</strong>
+          </Link>
+        </div>
+      </nav>
 
-                {/* Password Input */}
-                <div className="form-group mb-3">
-                  <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    className="form-control"
-                    placeholder="Enter your password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                </div>
+      {/* Login Form */}
+      <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="card shadow-lg">
+              <div className="card-header bg-primary text-white text-center">
+                <h3>Login</h3>
+              </div>
+              <div className="card-body">
+                <form onSubmit={handleSubmit}>
+                  {/* Email Input */}
+                  <div className="form-group mb-3">
+                    <label htmlFor="email">Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      className="form-control"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </div>
 
-                {/* Error Message */}
-                {error && <div className="alert alert-danger">{error}</div>}
+                  {/* Password Input */}
+                  <div className="form-group mb-3">
+                    <label htmlFor="password">Password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      className="form-control"
+                      placeholder="Enter your password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                  </div>
 
-                {/* Forgot Password Link */}
-                <div className="mb-3 text-end">
-                  <Link to="/forgot-password" className="text-primary">
-                    Forgot Password?
+                  {/* Error Message */}
+                  {error && <div className="alert alert-danger">{error}</div>}
+
+                  {/* Forgot Password Link */}
+                  <div className="mb-3 text-end">
+                    <Link to="/forgot-password" className="text-primary">
+                      Forgot Password?
+                    </Link>
+                  </div>
+
+                  {/* Login Button */}
+                  <div className="d-grid">
+                    <button type="submit" className="btn btn-primary">
+                      Login
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div className="card-footer text-center">
+                <p>
+                  Not registered?{" "}
+                  <Link to="/register" className="text-primary">
+                    Register here
                   </Link>
-                </div>
-
-                {/* Login Button */}
-                <div className="d-grid">
-                  <button type="submit" className="btn btn-primary">
-                    Login
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div className="card-footer text-center">
-              <p>
-                Not registered?{" "}
-                <Link to="/register" className="text-primary">
-                  Register here
-                </Link>
-              </p>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -16,6 +16,14 @@ import EditClass from "./EditClass";
 import Ct from "./Ct";
 import AddCT from "./AddCT";
 import EditCT from "./EditCT";
+import UserAll from "./UserAll";
+import Classroom from "./Classroom";
+import CreateClassroom from "./CreateClassroom";
+import CreateClassroomAssignment from "./CreateClassroomAssignment";
+import CreateClassroomLab from "./CreateClassroomLab";
+import CreateClassroomCT from "./CreateClassroomCT";
+import CreateClassroomClass from "./CreateClassroomClass";
+import CreateClassroomNotice from "./CreateClassroomNotice";
 
 const AppRoutes = () => {
   return (
@@ -30,6 +38,7 @@ const AppRoutes = () => {
         <Route path="/user/:userId/assignment/:assignmentId" element={<EditAssignment />} />
         <Route path="/user/:id/add-assignment" element={<AddAssignment />} /> 
 
+        <Route path="/user/:userId/all" element={<UserAll />} />
 
         <Route path="/user/:id/labs" element={<Lab />} />
         <Route path="/user/:userId/lab" element={<AddLab />} />
@@ -42,6 +51,16 @@ const AppRoutes = () => {
         <Route path="/user/:id/cts" element={<Ct />} />
         <Route path="/user/:userId/add-ct" element={<AddCT/>} />
         <Route path="/user/:userId/ct/:ctId" element={<EditCT />} />
+
+
+        <Route path="/user/:userId/classroom/:classroomId" element={<Classroom />} />
+        <Route path="/user/:userId/create-classroom" element={<CreateClassroom />} />
+        <Route path="/user/:userId/classroom/:classroomId/create-assignment" element={<CreateClassroomAssignment />} />
+        <Route path="/user/:userId/classroom/:classroomId/create-lab" element={<CreateClassroomLab />} />
+        <Route path="/user/:userId/classroom/:classroomId/create-ct" element={<CreateClassroomCT />} />
+        <Route path="/user/:userId/classroom/:classroomId/create-class" element={<CreateClassroomClass />} />
+        <Route path="/user/:userId/classroom/:classroomId/create-notice" element={<CreateClassroomNotice />} />
+
 
 
       </Routes>
